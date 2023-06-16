@@ -10,7 +10,7 @@ function App() {
     phone: "",
     gender: "",
     termcondition: false,
-    addmission: "",
+    addmissions: "",
   }
   // const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
@@ -76,16 +76,16 @@ function App() {
             {/* Radio button */}
             <div className='my-2'>
               <label className='me-3'>
-                <Field type="radio" name="addmission" className="form-inline m-1" />
+                <Field type="radio" name="addmissions" className="form-inline m-1" />
                 Direct addmission
               </label>
               <label>
-                <Field type="radio" name="addmission" className="form-inline m-1" />
+                <Field type="radio" name="addmissions" className="form-inline m-1" />
                 Ref. to any Intrence
               </label>
             </div>
             <p className='text-danger'>
-              <ErrorMessage name='addmission' />
+              <ErrorMessage name='addmissions' />
             </p>
             <div className='text-center'>
               <button type="submit" className='btn btn-warning '>Submit</button>
