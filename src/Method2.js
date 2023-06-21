@@ -1,22 +1,26 @@
 import { useFormik } from 'formik'
 import React from 'react'
 import * as yup from 'yup'
+import { incrementByAmount } from './Redux/counterSlice';
+import { useDispatch } from 'react-redux';
 
 const SignUpSchema = yup.object({
     fname: yup.string().min(2, "too short ").max(5, "too much").required("please enter the name"),
     Email: yup.string().required("please enter the email").email("plz valid mail"),
-    phone: yup.number("accept only numerical number").required("please enter the number"),
+    phone: yup.number("please use number").max(10,"too max").required("fill please"),
     course: yup.string().required("please select any one "),
     gender: yup.string().required("please select one "),
     policy: yup.boolean().oneOf([true], "please cheacked").required("please accept the term and condition"),
     password: yup.string().min(5).required("please enter the password"),
     confirmPassword: yup.string().min(5)
-        .oneOf([yup.ref("password", null)], "please same password")
+        .oneOf([yup.ref("password"), null], "please same password")
         .required("please enter confirm password")
 })
 
 
 export default function Method2() {
+    const dispatch = useDispatch()
+
     const { handleChange, handleSubmit, touched, values, errors, handleBlur, } = useFormik({
         initialValues: {
             fname: '',
@@ -31,8 +35,9 @@ export default function Method2() {
 
         validationSchema: SignUpSchema,
 
-        onSubmit: (values, action) => {
+        onSubmit: (values,action) => {
             console.log("form", values)
+            dispatch(incrementByAmount(values))
             action.resetForm();
         }
     })
