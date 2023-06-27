@@ -11,6 +11,7 @@ export default function IncreDecre_ment() {
     // const handleInput = (e) => {
     //     setUserValue((pre)=>({...pre,[e.target.name]:e.target.value}))
     // }
+
     return (
         <><div style={{ display: "grid", placeContent: "center", marginTop: "20%" }}>
             <h1> Increment / Decrement Operations</h1>
