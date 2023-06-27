@@ -12,9 +12,11 @@ export const counterSlice = createSlice({
 
         incrementByAmount: (state, action) => {
             state.loginData = action.payload
+            
             console.log("ff",state )
             console.log("action",action )
         },
+        
        
     },
 })

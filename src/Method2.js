@@ -1,6 +1,6 @@
-import { useFormik } from 'formik'
-import React from 'react'
-import * as yup from 'yup'
+import { useFormik } from 'formik';
+import React from 'react';
+import * as yup from 'yup';
 import { incrementByAmount } from './Redux/counterSlice';
 import { useDispatch } from 'react-redux';
 
@@ -19,6 +19,7 @@ const SignUpSchema = yup.object({
 
 
 export default function Method2() {
+    
     const dispatch = useDispatch()
 
     const { handleChange, handleSubmit, touched, values, errors, handleBlur, } = useFormik({
